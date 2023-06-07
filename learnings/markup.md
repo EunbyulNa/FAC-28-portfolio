@@ -56,7 +56,7 @@ For example, in the header part, we have a navigation section for the main conte
 ## 4. Use various tools to check that our website meets accessibility criteria
  We testd it using Lighthouse, which can be found in the Chrome developer tools. 
  
- <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*k6LcDCcfdyeWRUTn6zKXhQ.png">
+![Alt Text](../img/lighthouse.png)
 
 ## 5. Use CSS media queries to ensure our content is always presented effectively on screens of different sizes
 We have implemented a single breakpoint at 768px to cater to both tablet and phone screen sizes. When the display width reaches 768px, we apply specific styling adjustments to ensure effective presentation on screens of different sizes.
@@ -119,7 +119,7 @@ We have implemented a single breakpoint at 768px to cater to both tablet and pho
 
 ## 6. Demonstrate a mobile-first approach to building a website
 
-![Alt Text](../demo.gif)
+![Alt Text](../img/demo.gif)
 
 ## 7. Use CSS variables to apply repeated colours to HTML elements
 We didn't use global CSS variables, but I can modify your existing CSS code as follows:
@@ -186,6 +186,8 @@ We utilized several components with the display: `flex` property to arrange item
 Unfortunately, in this project, we did not utilize the grid attribute. Our website has a simple and basic design, and using the `display:flex` property was sufficient to arrange the layout either in a row or column.
 
 ## 10. Ensure our Git commit history tells a coherent story
+
+![Alt Text](../img/commit.png)
 
 Whenever we make modifications or add new code, we create a new branch. After making the necessary changes, we include a concise and descriptive commit message. This practice enables us to easily track and revert to previous versions if needed.
 
