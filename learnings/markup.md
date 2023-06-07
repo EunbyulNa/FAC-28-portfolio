@@ -119,8 +119,53 @@ We have implemented a single breakpoint at 768px to cater to both tablet and pho
 
 ## 6. Demonstrate a mobile-first approach to building a website
 
-## 7. Use CSS variables to apply repeated colours to HTML elements
+![Alt Text](../demo.gif)
 
+## 7. Use CSS variables to apply repeated colours to HTML elements
+We didn't use global CSS variables, but I can modify your existing CSS code as follows:
+```CSS
+:root {
+  --primary-color: #fa823f;
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* Rest of your existing CSS code */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#header,
+#primary-navigation,
+#logo,
+.primary-nav-link,
+#toggle-menu,
+.toggle-nav-list a,
+#main-jumbotron,
+#main-text h1,
+#about-us-text h1,
+#about-us-text p,
+#booking-btn a,
+#contact-us,
+label,
+input,
+button,
+textarea,
+#modal,
+#modal h1,
+#modal p,
+footer {
+  color: var(--text-color);
+}
+
+```
+
+
+In this updated code, I useed :root level, which allows me to define and reuse colors throughout your CSS code. The --primary-color variable represents the orange color used for various elements, and the --background-color and --text-color variables represent the black and white colors, respectively.
+
+By using CSS variables, you can easily update and maintain consistent colors throughout your UI by modifying the variable values at the :root level.
 ## 8. Use CSS Flexbox to style children in a single-direction layout (ie a row or a column)
 
 ## 9. Use CSS Grid to style children in two-direction layout
