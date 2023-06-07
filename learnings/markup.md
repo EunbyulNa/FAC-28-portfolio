@@ -163,13 +163,80 @@ footer {
 ```
 
 
-In this updated code, I useed :root level, which allows me to define and reuse colors throughout your CSS code. The --primary-color variable represents the orange color used for various elements, and the --background-color and --text-color variables represent the black and white colors, respectively.
+In this updated code, I useed `:root` level, which allows me to define and reuse colors throughout your CSS code. The `--primary-color` variable represents the orange color used for various elements, and the `--background-color` and `--text-color` variables represent the black and white colors, respectively.
 
-By using CSS variables, you can easily update and maintain consistent colors throughout your UI by modifying the variable values at the :root level.
+By using CSS variables, you can easily update and maintain consistent colors throughout your UI by modifying the variable values at the `:root` level.
+
 ## 8. Use CSS Flexbox to style children in a single-direction layout (ie a row or a column)
+
+```css
+#about-us-text {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  width: 50%;
+}
+```
+We utilized several components with the display: `flex` property to arrange items either in a row or a column. As an example, in the `'about-us'` section, we have three text contents that need to be displayed in a column rather than a row. To achieve this, we apply the `flex-direction: column` property, which arranges the child elements in a column layout.
 
 ## 9. Use CSS Grid to style children in two-direction layout
 
+Unfortunately, in this project, we did not utilize the grid attribute. Our website has a simple and basic design, and using the `display:flex` property was sufficient to arrange the layout either in a row or column.
+
 ## 10. Ensure our Git commit history tells a coherent story
 
+Whenever we make modifications or add new code, we create a new branch. After making the necessary changes, we include a concise and descriptive commit message. This practice enables us to easily track and revert to previous versions if needed.
+
 ## 11. Use the appropriate input types in HTML forms for gathering different types of information
+
+* Name: The input type "text" `<input type="text">` is suitable for capturing the name.
+
+```HTML
+ <label for="name">Name</label>
+ <input id="name" name="name" type="text" required/>
+```
+
+* Email: The input type "email" `<input type="email">` is appropriate for collecting email addresses.
+
+```HTML
+ <label for="email">Email</label>
+ <input id="email" name="email" type="email" required/>
+```
+
+* Telephone: The input type "tel" `<input type="tel">` is used for gathering telephone numbers.
+```HTML
+<label for="tel">Telephone</label>
+<input id="tel" name="tel" type="tel" required/>
+```
+
+* Preferred contact method: Radio buttons `<input type="radio">` are used to select the preferred contact method. Each option has a corresponding value attribute to indicate the choice.
+```HTML
+<fieldset>
+ <legend>Preferred contact method</legend>
+   <input id="contact-email"  type="radio" name="contact" value="email" checked/>
+  <label for="contact-email" class="radio">Email</label>
+    <input id="contact-tel" type="radio" name="contact" value="telephone"/>
+  <label for="contact-tel" class="radio">Telephone</label>
+    <input id="contact-post" type="radio" name="contact" value="post" />
+    <label for="contact-post" class="radio">Post</label>
+</fieldset>
+```
+
+* Message: The `<textarea>` element is used for capturing longer text inputs, such as messages or comments.
+ ```HTML
+   <label for="message">Message</label>
+   <textarea name="message" id="msg" required></textarea>
+```
+    
+* Marketing consent: A checkbox `<input type="checkbox">` is utilized to obtain consent for signing up to a weekly newsletter.
+ ```HTML
+  <input id="marketingConsent" name="marketingConsent" type="checkbox"/>
+   <label for="marketingConsent" class="checkbox">Sign up to weekly newsletter</label>
+ ```
+    
+* The form also includes a submit button `<button type="submit">Submit</button>` to submit the form data.
+  ```HTML
+   <button type="submit" id="submit">Submit</button>
+  ```
