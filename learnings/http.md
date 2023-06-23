@@ -62,7 +62,23 @@ After making the request with fetch, I checked the status property of the sunApi
 ## 5. Configure the options argument of the fetch method to make GET and POST requests
 
 ## 6. Use the map array method to create a new array containing new values
-- In this project, I didn't use `map` method.
+```js
+  try {
+    // Graph API fetch
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const data = monthlyAverages.map((data) => data.average);
+    const graphApi = `https://quickchart.io/chart?c={type:'bar',data:{labels:${JSON.stringify(labels)},datasets:[{label:'Average Hours',data:[${data}]}]}}`;
+    const graph = await fetch(graphApi);
+    if (!graph.ok) throw new Error(graph.status);
+    const graphImg = document.querySelector('#graphImg');
+    graphImg.src = graph.url;
+  } catch (error) {
+    handleError("Sorry, we cannot update the monthly average daylight graph.");
+  }
+}
+```
+- `fetchMonthlyAverage` function retrieves data for each month of the year and calculates the average value for each month based on the fetched data. The `monthlyAverages` array stores objects containing the `month` and its corresponding `average` value.
+To generate a graph, I use `map` array method. It extracts the `average` values from each object in the `monthlyAverages` array and creates a new array called `data` containing only the average values. This new array is then used to generate the graph.
   
 ## 7. Use the filter array method to create a new array with certain values removed
 - In this project, I didn't use `filter` method.
